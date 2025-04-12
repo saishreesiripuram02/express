@@ -16,6 +16,16 @@ itemRouter.get('', (req, res) => {
     res.status(200).json(data);
 });
 
+itemRouter.get('/is-valid', (req, res) => {
+    let userName = req.query.userName || ""; 
+    const item = data.find(item => item.name.trim().toLowerCase() === userName.toLowerCase());
+    if (item) {
+        res.status(200).json({found:true});
+    } else {
+        res.status(200).json({found:false});
+    }
+});
+
 // Read one (GET)
 itemRouter.get('/:id', (req, res) => {
     const id = parseInt(req.params.id);
@@ -50,6 +60,8 @@ itemRouter.delete('/:id', (req, res) => {
         res.status(404).send('Item not found');
     }
 });
+
+
 
 
 module.exports = itemRouter;
