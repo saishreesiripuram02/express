@@ -7,6 +7,9 @@ const port = 3000;
 const itemRouter = require('./item');
 const cartRouter = require('./cart');
 const userRouter = require('./user');
+const addonRouter = require('./addons');
+
+
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -14,6 +17,7 @@ app.use(bodyParser.json());
 app.use('/api/items', itemRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/user', userRouter);
+app.use('/api/addons', addonRouter);
 
 
 app.listen(port, () => {
