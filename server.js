@@ -8,6 +8,7 @@ const itemRouter = require('./item');
 const cartRouter = require('./cart');
 const userRouter = require('./user');
 const addonRouter = require('./addons');
+const chefData = require('./chefData');
 
 
 
@@ -18,6 +19,7 @@ app.use('/api/items', itemRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/user', userRouter);
 app.use('/api/addons', addonRouter);
+app.use('/api/chef-data', chefData);
 
 
 app.listen(port, () => {
